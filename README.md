@@ -11,11 +11,11 @@ I also add two aliases to my /etc/hosts file to match the names of the container
 ## Features - 
 *Will transition in the new name soon to clean up some of the ports and make this work with docker commands. As is there is no cert in path*
 
-- Nexus Web UI with SSL accessible via https://nexus
+- Nexus Web UI with SSL accessible via https://nexus or https://repo.mycompany.com
 - Nexus Web UI over http via http://nexus:8081 or http://localhost:8081
-- Docker proxy group registry accessible via https://nexus:18443 (pull)
+- Docker proxy group registry accessible via https://nexus:18443 (pull) or https://registry.mycompany.com
 - Docker Private Registry accessible via https://nexus:5000  (push)
-- IQ Server accessible via https://iq-server or http://localhost:8070
+- IQ Server accessible via https://iq-server or http://localhost:8070 or https://iq-server.mycompany.com
 
 ## Operations
 
