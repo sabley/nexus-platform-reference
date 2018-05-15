@@ -43,7 +43,7 @@ The ports are based on my own configuration but can easily be re-aligned via the
 
 ## IQ Server Configuration
 
-There is a config.yml in the IQ-Server folder which is where you can customize the config to work with a mail server, JIRA and other items.
+There is a config.yml in the IQ-Server folder which is where you can customize the config to work with a SMTP, JIRA and Proxy servers.
 
 ## SSL Certificates
 
