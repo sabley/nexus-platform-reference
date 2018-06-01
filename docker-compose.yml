@@ -21,6 +21,7 @@ services:
     ports:
       - '443:443'
       - '5000:5000'
+      - '8011:8011'
       - '18443:18443'
     links:
       - nexus
@@ -33,7 +34,7 @@ services:
       - ~/nexus-data:/nexus-data
     ports:
       - "8081:8081"
-    image: sonatype/nexus3:3.11.0
+    image: sonatype/nexus3:3.12.0
     links:
       - iq-server
     container_name: nexus
