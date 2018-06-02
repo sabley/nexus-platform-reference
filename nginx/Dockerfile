@@ -25,3 +25,4 @@ RUN mkdir -p /etc/nginx/external; \
     -days 365 -nodes -sha256
 
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY proxy_params /usr/local/etc/nginx/proxy_params
