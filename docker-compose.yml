@@ -17,7 +17,7 @@ version: '3'
 services:
   nginx-proxy:
     build: ./nginx
-    image: sonatype_nginx-proxy:2.2
+    image: sonatype_nginx-proxy:2.3
     ports:
       - '443:443'
       - '5000:5000'
