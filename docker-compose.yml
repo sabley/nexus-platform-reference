@@ -23,9 +23,6 @@ services:
       - '5000:5000'
       - '8011:8011'
       - '18443:18443'
-    links:
-      - nexus
-      - iq-server
     command: [ nginx, '-g', 'daemon off;' ]
 
   nexus:
@@ -35,9 +32,7 @@ services:
     ports:
       - "8081:8081"
     image: sonatype/nexus3:3.13.0
-    links:
-      - iq-server
-    container_name: nexus
+
 
   iq-server:
     build: ./iq-server
@@ -47,4 +42,4 @@ services:
       - "8070:8070"
       - "8071:8071"
     image: my-iq-server:1.49.0
-    container_name: iq-server
+
