@@ -2,7 +2,7 @@
 
 This is a template for deploying Nexus Repository Manager and IQ Server behind an NGINX proxy to offload SSL
 
-I also add two aliases to my /etc/hosts file to match the names of the containers and simulate DNS from outside of docker host but this will setup and be accessible over http wtihout them:
+I also add a few aliases to my /etc/hosts file to match the names of the containers and simulate DNS from outside of docker host but this will setup and be accessible over http wtihout them:
 
 ```
 127.0.0.1      localhost iq-server.mycompany.com repo.mycompany.com registry.mycompany.com
