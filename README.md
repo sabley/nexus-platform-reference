@@ -42,7 +42,6 @@ For folks using Docker Sesktop with Kubernetes built in you can also now use Doc
 ```
 docker-compose build
 docker stack deploy -c docker-compose.yml demoenv
-
 ```
 
 Then remove it all with
