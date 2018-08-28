@@ -41,5 +41,5 @@ services:
     ports:
       - "8070:8070"
       - "8071:8071"
-    image: my-iq-server:1.49.0
+    image: my-iq-server:1.50.0
 

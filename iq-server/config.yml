@@ -6,7 +6,7 @@
 sonatypeWork: /sonatype-work
 
 # Base URL of the Sonatype CLM server for user facing links back to the server.
-baseUrl: https://iq-server
+baseUrl: https://iq-server.mycompany.com
 
 # Confirm you have read the upgrade instructions and come prepared
 #consentToUpgradeToVersion_1_45: true
@@ -81,28 +81,28 @@ server:
 
 # Notification mail settings.
 # If enabled, ensure that the baseUrl configuration setting is also enabled and correct, because generated emails often contain links to the server.
-#mail:
+mail:
 
   # The host running the SMTP server to use. 
-  #hostname: "127.0.0.1"
+  hostname: "smtp.mailtrap.io"
 
   # The port at which the SMTP server listens on. 
-  #port: 587
+  port: 465
 
   # The address used as From for outgoing notification mails sent by the server.
-  #systemEmail: "SonatypeCLM@localhost"
+  systemEmail: "SonatypeCLM@localhost"
 
   # The username used to access the mail server.
-  #username: "anonymous"
+  username: "200258239c92a3"
 
   # The password used to access the mail server.
-  #password: "guest"
+  password: "8ac2860b581732"
   
   # Connect using SSL.
   #ssl: true
   
   # Connect using TLS.
-  #tls: true
+  tls: true
 
 # Notification JIRA settings.
 # Note that any user of the Nexus IQ Server will have access to see all projects and applicable issue types available
