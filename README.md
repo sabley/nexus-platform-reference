@@ -1,6 +1,6 @@
 # Nexus Platform with Docker Support, behind Nginx
 
-This is a template for deploying Nexus Repository Manager and IQ Server behind an NGINX proxy to offload SSL
+This is a template for deploying Nexus Repository Manager and IQ Server behind an NGINX proxy to offload SSL using Docker Compose
 
 I also add a few aliases to my /etc/hosts file to match the names of the containers and simulate DNS from outside of docker host but this will setup and be accessible over http wtihout them:
 
