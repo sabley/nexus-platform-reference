@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.16.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: iq-server
+  name: iq-server
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: iq-server
+    spec:
+      containers:
+      - image: cmyanko/my-iq-server:1.50.0
+        name: iq-server
+        ports:
+        - containerPort: 8070
+        - containerPort: 8071
+        resources: {}
+        volumeMounts:
+        - mountPath: /sonatype-work
+          name: iq-server-claim0
+      restartPolicy: Always
+      volumes:
+      - name: iq-server-claim0
+        persistentVolumeClaim:
+          claimName: iq-server-claim0
+status: {}

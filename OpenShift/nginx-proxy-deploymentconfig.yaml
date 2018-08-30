@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  annotations:
+    kompose.cmd: kompose --provider openshift convert
+    kompose.version: 1.16.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nginx-proxy
+  name: nginx-proxy
+spec:
+  replicas: 1
+  selector:
+    io.kompose.service: nginx-proxy
+  strategy:
+    resources: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: nginx-proxy
+    spec:
+      containers:
+      - args:
+        - nginx
+        - -g
+        - daemon off;
+        image: ' '
+        name: nginx-proxy
+        ports:
+        - containerPort: 443
+        - containerPort: 5000
+        - containerPort: 8011
+        - containerPort: 18443
+        resources: {}
+      restartPolicy: Always
+  test: false
+  triggers:
+  - type: ConfigChange
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - nginx-proxy
+      from:
+        kind: ImageStreamTag
+        name: nginx-proxy:2.3
+    type: ImageChange
+status: {}

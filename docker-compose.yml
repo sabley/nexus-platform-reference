@@ -17,7 +17,7 @@ version: '3'
 services:
   nginx-proxy:
     build: ./nginx
-    image: sonatype_nginx-proxy:2.3
+    image: cmyanko/sonatype_nginx-proxy:2.3
     ports:
       - '443:443'
       - '5000:5000'
@@ -41,5 +41,5 @@ services:
     ports:
       - "8070:8070"
       - "8071:8071"
-    image: my-iq-server:1.50.0
+    image: cmyanko/my-iq-server:1.50.0
 

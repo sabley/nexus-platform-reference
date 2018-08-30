@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.16.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nginx-proxy
+  name: nginx-proxy
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: nginx-proxy
+    spec:
+      containers:
+      - args:
+        - nginx
+        - -g
+        - daemon off;
+        image: sonatype_nginx-proxy:2.3
+        name: nginx-proxy
+        ports:
+        - containerPort: 443
+        - containerPort: 5000
+        - containerPort: 8011
+        - containerPort: 18443
+        resources: {}
+      restartPolicy: Always
+status: {}

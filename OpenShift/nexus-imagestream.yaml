@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nexus
+  name: nexus
+spec:
+  tags:
+  - annotations: null
+    from:
+      kind: DockerImage
+      name: sonatype/nexus3:3.13.0
+    generation: null
+    importPolicy: {}
+    name: 3.13.0
+status:
+  dockerImageRepository: ""

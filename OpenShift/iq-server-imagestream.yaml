@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: iq-server
+  name: iq-server
+spec:
+  tags:
+  - annotations: null
+    from:
+      kind: DockerImage
+      name: cmyanko/my-iq-server:1.50.0
+    generation: null
+    importPolicy: {}
+    name: 1.50.0
+status:
+  dockerImageRepository: ""
