@@ -5,11 +5,11 @@
 # Directory for data files.
 sonatypeWork: /sonatype-work
 
+# Path to a license file to automatically install if unlicensed.
+#licenseFile: ./license.lic
+
 # Base URL of the Sonatype CLM server for user facing links back to the server.
 baseUrl: https://iq-server.mycompany.com
-
-# Confirm you have read the upgrade instructions and come prepared
-#consentToUpgradeToVersion_1_45: true
 
 # Hour of the day(0-23) to schedule Policy Monitoring execution. The default is midnight.
 #policyMonitoringHour: 0
@@ -181,6 +181,19 @@ logging:
     "org.eclipse.birt.report.engine.layout.pdf.font.FontConfigReader": WARN
     "org.eclipse.jetty": INFO
     "org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter": INFO   # WARNING: This reveals credentials at DEBUG level
+    "com.sonatype.insight.audit":
+      appenders:
+      - type: file
+        # The file to which audit statements will be logged.
+        currentLogFilename: ./log/audit.log
+        # When the audit log file rotates, the archived audit log will be renamed to this and gzipped. The
+        # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+        # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+        #
+        # If archive is true, this must be specified.
+        archivedLogFilenamePattern: ./log/audit-%d.log.gz
+        # The number of archived audit log files to keep.
+        archivedFileCount: 50
 
   appenders:
   
