@@ -26,20 +26,26 @@ services:
     command: [ nginx, '-g', 'daemon off;' ]
 
   nexus:
-    #build: nexus
+    image: sonatype/nexus3:3.14.0
     volumes:
       - ~/nexus-data:/nexus-data
     ports:
       - "8081:8081"
-    image: sonatype/nexus3:3.14.0
-
 
   iq-server:
+    image: cmyanko/my-iq-server:1.53.0
     build: ./iq-server
     volumes:
       - ~/iq-data:/sonatype-work
     ports:
       - "8070:8070"
       - "8071:8071"
-    image: cmyanko/my-iq-server:1.52.0
 
+  jenkins:
+    image: jenkinsci/blueocean
+    volumes:
+      - ~/.jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8080:8080"
+      - "50000:50000"
