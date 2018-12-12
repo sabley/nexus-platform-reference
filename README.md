@@ -19,8 +19,7 @@ I also add a few aliases to my /etc/hosts file to simulate DNS from outside of d
 
 ## Operations
 
-To create and run the Nginx proxy, Nexus Repository Manager and IQ Servver, run:
-
+The demo-setup script is a one time script to config docker and npm within NXRM; prior to running, review the docker-compose file and the persistent volume mounts. They are set to work on a linux machine and will need to be changed for a windows based machine.
 ```
 ./demo-setup.sh
 ```
