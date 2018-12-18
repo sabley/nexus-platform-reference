@@ -5,7 +5,10 @@ echo $1
 echo $2
 echo $3
 cd /etc/webhook;
-docker pull $2:my-webhook-test
-docker save -o docker.tar $2:my-webhook-test
-java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i juice-shop -a admin:admin docker.tar
+docker pull $2:$3
+docker save -o docker.tar $2:$3
+java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i $2 -a admin:admin docker.tar
+ls -la
+rm docker.tar
+docker rmi $2:$3
 ls -la
