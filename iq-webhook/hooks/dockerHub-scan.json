@@ -1,7 +1,7 @@
 [
   {
-    "execute-command": "/etc/webhook/cli.sh",
-    "id": "simple-save",
+    "execute-command": "/etc/webhook/dockerHub-scan.sh",
+    "id": "dockerHub-scan",
     "pass-arguments-to-command":  [
       {
         "source": "entire-payload"

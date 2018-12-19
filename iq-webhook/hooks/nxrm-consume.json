@@ -1,22 +1,22 @@
 [
   {
-    "execute-command": "/etc/webhook/repo.sh",
-    "id": "repo",
+    "execute-command": "/etc/webhook/nxrm-consume.sh",
+    "id": "nxrm-upload",
     "pass-arguments-to-command":  [
       {
-        "source": "entire-payload"
+        "source": "entire-payload",
       },
       {
         "source": "payload",
-        "name": "repository.repo_name"
+        "name": "action"
       },
       {
         "source": "payload",
-        "name": "push_data.tag"
+        "name": "component.name"
       },
       {
         "source": "payload",
-        "name": "hash"
+        "name": "component.version"
 
       }
     ],
