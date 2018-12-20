@@ -61,5 +61,7 @@ services:
     command:
        - -verbose 
        - -hotreload
-       - -hooks=/etc/webhook/hooks.json 
-       - -hooks=/etc/webhook/test-docker-iq-hook.json
+       - -hooks=/etc/webhook/dockerHub-scan.json
+       - -hooks=/etc/webhook/iq-consume.json
+       - -hooks=/etc/webhook/nxrm-consume.json
+       - -hooks=/etc/webhook/test.json

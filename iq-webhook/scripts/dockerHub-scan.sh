@@ -10,5 +10,5 @@ docker save -o docker.tar $2:$3
 java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i juice-shop -a admin:admin123 docker.tar
 ls -la
 rm docker.tar
-docker rmi $2:$3
+docker rmi nexus:18444/$2:$3
 ls -la
