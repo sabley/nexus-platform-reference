@@ -53,6 +53,7 @@ services:
 
   listener:
     image: sonatype/webhook-listener:1.0
+    build: ./iq-webhook
     volumes:
       - /usr/local/bin/docker:/usr/bin/docker
       - /var/run/docker.sock:/var/run/docker.sock
