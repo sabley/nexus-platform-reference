@@ -193,7 +193,7 @@ logging:
         # If archive is true, this must be specified.
         archivedLogFilenamePattern: ./log/audit-%d.log.gz
         # The number of archived audit log files to keep.
-        archivedFileCount: 50
+        archivedFileCount: 5
 
   appenders:
   
