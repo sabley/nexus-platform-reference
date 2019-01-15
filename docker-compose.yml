@@ -26,7 +26,7 @@ services:
     command: [ nginx, '-g', 'daemon off;' ]
 
   nexus:
-    image: sonatype/nexus3:3.14.0
+    image: sonatype/nexus3:3.15.0
     volumes:
       - ~/nexus-data:/nexus-data
     ports:
