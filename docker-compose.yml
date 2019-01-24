@@ -42,6 +42,4 @@ services:
 #        - -hooks=/etc/webhook/test.json
 #        - -hooks=/etc/webhook/dockerHub-scan.json
 #        - -hooks=/etc/webhook/nxrm-consume.json
-#        - -hooks=/etc/webhook/iq-consume.json
-#     links:
-#       - iq-server      
+#        - -hooks=/etc/webhook/iq-consume.json     
