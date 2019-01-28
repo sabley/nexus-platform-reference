@@ -42,4 +42,16 @@ services:
 #        - -hooks=/etc/webhook/test.json
 #        - -hooks=/etc/webhook/dockerHub-scan.json
 #        - -hooks=/etc/webhook/nxrm-consume.json
-#        - -hooks=/etc/webhook/iq-consume.json     
+#        - -hooks=/etc/webhook/iq-consume.json
+  # victoria:
+  #   image: victoria:1.0.0-44
+  #   build: ./victoria
+  #   volumes:
+  #   - "~/.victoria/db:/db"
+  #   - "~/.victoria/log:/log"
+  #   - "~/.victoria/tmp:/tmp"
+  #   ports:
+  #     - "8090:8090"
+  #     - "8091:8091"
+  #   depends_on:
+  #     - iq-server     
