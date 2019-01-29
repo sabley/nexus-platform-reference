@@ -57,11 +57,11 @@ database:
 
 iq-server:
   # CHANGE-ME
-  baseUrl: http://localhost:8070
+  baseUrl: http://iq-server:8070
   authentication:
     # CHANGE-ME
     username: admin
-    password: admin123
+    password: admin
 
   timeout: 30 seconds
   connectionTimeout: 30 seconds
