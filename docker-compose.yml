@@ -37,15 +37,16 @@ services:
     ports:
       - '8080:8080'
       - '50000:50000'
-  victoria:
-    image: 'victoria:1.0.0-44'
-    build: ./victoria
-    volumes:
-      - '~/.victoria/db:/home/nexus/db'
-      - '~/.victoria/log:/home/nexus/log'
-      - '~/.victoria/tmp:/home/nexus/tmp'
-    ports:
-      - '8090:8090'
-      - '8091:8091'
-    depends_on:
-      - iq-server
+
+  # victoria:
+  #   image: 'victoria:1.0.0-44'
+  #   build: ./victoria
+  #   volumes:
+  #     - '~/.victoria/db:/home/nexus/db'
+  #     - '~/.victoria/log:/home/nexus/log'
+  #     - '~/.victoria/tmp:/home/nexus/tmp'
+  #   ports:
+  #     - '8090:8090'
+  #     - '8091:8091'
+  #   depends_on:
+  #     - iq-server
