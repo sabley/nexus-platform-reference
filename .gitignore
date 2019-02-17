@@ -2,3 +2,5 @@
 
 #dockstation
 .env
+#anchore db
+/db
