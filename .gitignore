@@ -4,3 +4,5 @@
 .env
 #anchore db
 /db
+
+/.vscode
