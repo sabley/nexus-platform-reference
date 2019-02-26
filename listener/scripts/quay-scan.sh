@@ -10,31 +10,47 @@
 #    “latest”
 #  ]
 # }
-echo "Payload"
+# Debugging Stuff 
+echo "~~~~~~~~~~~~~~~~~Payload~~~~~~~~~~~~~~~~~"
 echo $1 # Entire Payload
-echo "Docker URL"
+echo "~~~~~~~~~~~~~~~~~Docker URL~~~~~~~~~~~~~~~~~"
 echo $2 # Docker URL
-echo "Updated Tags"
+echo "~~~~~~~~~~~~~~~~~Updated Tags~~~~~~~~~~~~~~~~~"
 echo $3 # Updated Tags
-echo "Name"
+echo "~~~~~~~~~~~~~~~~~Trimmed Tags~~~~~~~~~~~~~~~~~"
+trimmedTags=`echo $3 | sed 's/[][]//g'`
+echo $trimmedTags
+echo "~~~~~~~~~~~~~~~~~Name~~~~~~~~~~~~~~~~~"
 echo $4 # Name
-echo "namespace"
+echo "~~~~~~~~~~~~~~~~~namespace~~~~~~~~~~~~~~~~~"
 echo $5 # namespace
-echo "Repository"
-echo $6 # repositry
-echo "vvvvvvvvvvvvv"
 
 cd /etc/webhook;
 
 AppID=${6/\//\_}
 echo $AppID
 
-URL='quay.io'
-DockerPull=$URL/$6:$3
-docker pull $DockerPull
-docker save -o $AppID.tar $DockerPull
-ls -lah
-java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i $AppID -a admin:admin $AppID.tar
-rm $AppID.tar
-docker rmi $6:$3
-ls -lah
+for tag in $trimmedTags ; do
+   echo "=== testing $tag ==="
+   if [[ -z "$tag" ]] ; then
+       echo "Tag invalid"
+   else
+      echo "Tag Valid - Doing Scan";
+  	  DockerPull=$URL/$5/$4:$tag;
+  	  echo $DockerPull
+  	  doDockerScan $DockerPull $AppID
+   fi
+done
+
+# Docker Scan Function to Call
+
+doDockerScan () {
+	echo $1
+	docker pull $1
+	docker save -o docker.tar $1
+	ls -lah
+	java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i $2 -a admin:admin docker.tar
+	rm docker.tar
+	docker rmi $1
+	ls -lah
+}

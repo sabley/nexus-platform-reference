@@ -5,7 +5,7 @@
     "pass-arguments-to-command":  [
       {
         "source": "entire-payload"
-      },
-    ],
+      }
+    ]
       }
 ]
