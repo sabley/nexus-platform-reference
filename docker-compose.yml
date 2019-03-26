@@ -11,6 +11,10 @@ services:
       - nginx
       - '-g'
       - daemon off;
+    depends_on:
+      - iq-server
+      - nexus
+      
   nexus:
     image: 'cmyanko/nexus3:3.15.2'
     build: ./nexus
@@ -20,7 +24,7 @@ services:
       - '8081:8081'
       - '18443:18443'
   iq-server:
-    image: 'cmyanko/my-iq-server:1.61.0'
+    image: 'cmyanko/my-iq-server:1.62.0'
     build: ./iq-server
     volumes:
       - '~/iq-data:/sonatype-work'
@@ -58,18 +62,18 @@ services:
       - -hooks=/etc/webhook/iq-consume.json
       - -hooks=/etc/webhook/quay-consume.json
 
-  # victoria:
-  #   image: 'victoria:1.0.0-44'
-  #   build: ./victoria
-  #   volumes:
-  #     - '~/.victoria/db:/home/nexus/db'
-  #     - '~/.victoria/log:/home/nexus/log'
-  #     - '~/.victoria/tmp:/home/nexus/tmp'
-  #   ports:
-  #     - '8090:8090'
-  #     - '8091:8091'
-  #   depends_on:
-  #     - iq-server
+  victoria:
+    image: 'victoria:1.0.0-44'
+    build: ./victoria
+    volumes:
+      - '~/.victoria/db:/home/nexus/db'
+      - '~/.victoria/log:/home/nexus/log'
+      - '~/.victoria/tmp:/home/nexus/tmp'
+    ports:
+      - '8090:8090'
+      - '8091:8091'
+    depends_on:
+      - iq-server
 
   anchore-engine:
     image: docker.io/anchore/anchore-engine:latest
