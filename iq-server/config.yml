@@ -84,19 +84,19 @@ server:
 mail:
 
   # The host running the SMTP server to use. 
-  hostname: "smtp.mailtrap.io"
+  #hostname: "smtp.mailtrap.io"
 
   # The port at which the SMTP server listens on. 
-  port: 465
+  #port: 465
 
   # The address used as From for outgoing notification mails sent by the server.
-  systemEmail: "SonatypeCLM@localhost"
+  #systemEmail: "SonatypeCLM@localhost"
 
   # The username used to access the mail server.
-  username: "200258239c92a3"
+  #username: "200258239c92a3"
 
   # The password used to access the mail server.
-  password: "8ac2860b581732"
+  #password: "8ac2860b581732"
   
   # Connect using SSL.
   #ssl: true
