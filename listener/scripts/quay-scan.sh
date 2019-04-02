@@ -30,27 +30,38 @@ cd /etc/webhook;
 AppID=${6/\//\_}
 echo $AppID
 
+# Valid stages are develop|build|stage-release|release|operate
+Stage="stage_release"
+
 for tag in $trimmedTags ; do
    echo "=== testing $tag ==="
    if [[ -z "$tag" ]] ; then
        echo "Tag invalid"
    else
       echo "Tag Valid - Doing Scan";
-  	  DockerPull=$URL/$5/$4:$tag;
+  	  DockerPull=$2:$tag;
   	  echo $DockerPull
-  	  doDockerScan $DockerPull $AppID
+  	  # doDockerScan $DockerPull $AppID
+	  docker pull $DockerPull
+	  docker save -o docker.tar $DockerPull
+	  echo 'Should see a docker.tar file'
+	  ls -lah
+	  java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i $AppID -t stage-release -a admin:admin docker.tar
+	  rm docker.tar
+	  docker rmi $DockerPull
+	  ls -lah
    fi
 done
 
 # Docker Scan Function to Call
 
-doDockerScan () {
-	echo $1
-	docker pull $1
-	docker save -o docker.tar $1
-	ls -lah
-	java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i $2 -a admin:admin docker.tar
-	rm docker.tar
-	docker rmi $1
-	ls -lah
-}
+# doDockerScan () {
+# 	echo $1
+# 	docker pull $1
+# 	docker save -o docker.tar $1
+# 	ls -lah
+# 	java -jar nexus-iq-cli.jar -s http://iq-server:8070 -i $2 -a admin:admin docker.tar
+# 	rm docker.tar
+# 	docker rmi $1
+# 	ls -lah
+# }
