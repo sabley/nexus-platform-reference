@@ -17,7 +17,6 @@ services:
       
   nexus:
     image: 'cmyanko/nexus3:3.16.0'
-    build: ./nexus
     volumes:
       - '~/nexus-data:/nexus-data'
     ports:
