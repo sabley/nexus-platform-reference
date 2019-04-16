@@ -16,7 +16,7 @@ services:
       - nexus
       
   nexus:
-    image: 'cmyanko/nexus3:3.15.2'
+    image: 'cmyanko/nexus3:3.16.0'
     build: ./nexus
     volumes:
       - '~/nexus-data:/nexus-data'
