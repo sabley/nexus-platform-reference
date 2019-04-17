@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx-proxy:
     build: ./nginx
-    image: 'cmyanko/sonatype_nginx-proxy:2.6'
+    image: 'cmyanko/sonatype_nginx-proxy:2.6.1'
     ports:
       - '443:443'
       - '5000:5000'
