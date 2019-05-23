@@ -65,9 +65,9 @@ services:
   #   image: 'victoria:1.0.0-44'
   #   build: ./victoria
   #   volumes:
-  #     - '~/.victoria/db:/home/nexus/db'
-  #     - '~/.victoria/log:/home/nexus/log'
-  #     - '~/.victoria/tmp:/home/nexus/tmp'
+  #     - '~/.demo-pv/victoria/db:/home/nexus/db'
+  #     - '~/.demo-pv/victoria/log:/home/nexus/log'
+  #     - '~/.demo-pv/victoria/tmp:/home/nexus/tmp'
   #   ports:
   #     - '8090:8090'
   #     - '8091:8091'
@@ -83,7 +83,7 @@ services:
   #    - "8228:8228"
   #    - "8338:8338"
   #   volumes:
-  #    - ~/.aevolume/config:/config/:z
+  #    - ~/.demo-pv/aevolume/config:/config/:z
   #   logging:
   #    driver: "json-file"
   #    options:
@@ -95,7 +95,7 @@ services:
   # anchore-db:
   #   image: "postgres:9"
   #   volumes:
-  #    - ~/.aevolume/db:/var/lib/postgresql/data/pgdata/:z
+  #    - ~/.demo-pv/aevolume/db:/var/lib/postgresql/data/pgdata/:z
   #   environment:
   #     - POSTGRES_PASSWORD=mysecretpassword
   #     - PGDATA=/var/lib/postgresql/data/pgdata/
