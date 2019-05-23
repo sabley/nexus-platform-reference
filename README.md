@@ -27,19 +27,6 @@ Subsequent runs can use docker-compose without the build for nginx or the need t
 docker-compose up -d
 ```
 
-For folks using Docker Sesktop with Kubernetes built in you can also now use Docker Stack.
-
-```
-docker-compose build
-docker stack deploy -c docker-compose.yml demoenv
-```
-
-Then remove it all with
-
-```
-docker stack rm demoenv
-```
-
 ## URL's
 
 - Nexus Web UI with SSL accessible via https://repo.mycompany.com
