@@ -14,7 +14,7 @@ In addition to Docker Desktop, I recoomend install Kitematic to help with managi
 
 I run Jenkins as a local app which allow it to hit the Nexus repo through Nginx so Docker repos work
 
-The demo-setup script is a one time script to config docker and npm within NXRM; prior to running, review the docker-compose file and the persistent volume mounts. They are set to work on a linux machine and will need to be changed for a windows based machine.
+The demo-setup script is a one time script to config docker and npm within NXRM; prior to running, review the docker-compose file and the persistent volume mounts. They are set to work on a linux machine and will need to be changed for a windows based machine. If you look at the script you can see it starts the environmetn with a docker-compose up -d and then creates and runs a few setup scripts once NXRM is responding to traffic.
 ```
 ./demo-setup.sh
 ```
