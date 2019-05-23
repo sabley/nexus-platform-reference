@@ -36,12 +36,12 @@ docker-compose up -d
 - Nexus Web UI with SSL accessible via https://repo.mycompany.com
 - Nexus Web UI over http via http://localhost:8081
 - Docker proxy group registry accessible via https://registry.mycompany.com
-- Docker Private Registry accessible via https://registry.mycompany.com:5000  (push)
+- Docker Private Registry accessible via https://registry.mycompany.com:5000  (docker push, not browser)
 - IQ Server accessible via http://localhost:8070 or https://iq-server.mycompany.com
 
 ## Persistent Volumes
 
-I've create a convention of putting all of the persistent volumes is a hidden folder in the users home folder
+I've create a convention of putting all of the persistent volumes is a hidden folder in the my home folder
 ```
 ~/.demo-pv
   + /iq-data
