@@ -65,9 +65,9 @@ services:
   #   image: 'victoria:1.0.0-44'
   #   build: ./victoria
   #   volumes:
-  #     - '~/.victoria/db:/home/nexus/db'
-  #     - '~/.victoria/log:/home/nexus/log'
-  #     - '~/.victoria/tmp:/home/nexus/tmp'
+  #     - '~/.demo-pv/victoria/db:/home/nexus/db'
+  #     - '~/.demo-pv/victoria/log:/home/nexus/log'
+  #     - '~/.demo-pv/victoria/tmp:/home/nexus/tmp'
   #   ports:
   #     - '8090:8090'
   #     - '8091:8091'
