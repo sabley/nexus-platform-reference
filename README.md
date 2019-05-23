@@ -10,7 +10,7 @@ I also add a few aliases to my /etc/hosts file to simulate DNS from outside of d
 
 ## Operations
 
-In addition to Docker Desktop, I recoomend install Kitematic to help with managiong containers and seeing into logs.
+In addition to Docker Desktop, I reccomend install Kitematic to help with managiong containers and seeing into logs.
 
 I run Jenkins as a local app which allow it to hit the Nexus repo through Nginx so Docker repos work
 
