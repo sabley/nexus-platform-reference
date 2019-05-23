@@ -39,6 +39,17 @@ docker-compose up -d
 - Docker Private Registry accessible via https://registry.mycompany.com:5000  (push)
 - IQ Server accessible via http://localhost:8070 or https://iq-server.mycompany.com
 
+## Persistent Volumes
+
+I've create a convention of putting all of the persistent volumes is a hidden folder in the users home folder
+```
+~/.demo-pv
+  + /iq-data
+  + /iq-logs
+  + /nexus-data
+```
+It's not clear to me how these work on a windows machine but check your settings for shared drives in Docker Settings. For info check out Getting Started at: https://docs.docker.com/docker-for-windows/
+
 ## IQ Server Configuration
 
 There is a config.yml in the IQ-Server folder which is where you can customize the config to work with a SMTP, JIRA and Proxy servers.
