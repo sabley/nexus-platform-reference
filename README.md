@@ -62,3 +62,7 @@ The Ngnix docker image build process generates insecure SSL certificates with fa
 ## Dynamic Configuration
 
 Working examples of how to provision a new blobstore and create docker repos using it are in here and part of the setup. There are also placeholders for other formats like Maven, nnpm, etc...
+
+## Advanced
+
+There are additional services defined within the docker-compose file but commented out to ease getting started. In addition to Jenkins, that weas mentioned early there are also services defined for Victoria, Anchore, and the Webhook Listener.
