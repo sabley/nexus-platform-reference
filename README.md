@@ -8,15 +8,6 @@ I also add a few aliases to my /etc/hosts file to simulate DNS from outside of d
 127.0.0.1      localhost iq-server.mycompany.com repo.mycompany.com registry.mycompany.com
 ```
 
-## Features - 
-*Will transition in the new name soon to clean up some of the ports and make this work with docker commands. As is there is no cert in path*
-
-- Nexus Web UI with SSL accessible via https://repo.mycompany.com
-- Nexus Web UI over http via http://localhost:8081
-- Docker proxy group registry accessible via https://registry.mycompany.com
-- Docker Private Registry accessible via https://registry.mycompany.com:5000  (push)
-- IQ Server accessible via http://localhost:8070 or https://iq-server.mycompany.com
-
 ## Operations
 
 The demo-setup script is a one time script to config docker and npm within NXRM; prior to running, review the docker-compose file and the persistent volume mounts. They are set to work on a linux machine and will need to be changed for a windows based machine.
@@ -49,9 +40,13 @@ Then remove it all with
 docker stack rm demoenv
 ```
 
-## Ports
+## URL's
 
-The ports are based on my own configuration but can easily be re-aligned via the nginx conf file. If you were previously using my setup with SSL built into Nexus then the big change is to remap 18443 and 5000 to http instead of https within Nexus. I've added some provisioning scripts to remove the need for manual configuration within Nexus. 18443 maps to my Docker-proxy group and 5000 maps to my docker-hosted repo. I run nexus on 8081 (to avoid a conflict with Jenkins) which can still be hit directly for non-https connections. For now the provisioning only does Docker config items but additional examples are in place.
+- Nexus Web UI with SSL accessible via https://repo.mycompany.com
+- Nexus Web UI over http via http://localhost:8081
+- Docker proxy group registry accessible via https://registry.mycompany.com
+- Docker Private Registry accessible via https://registry.mycompany.com:5000  (push)
+- IQ Server accessible via http://localhost:8070 or https://iq-server.mycompany.com
 
 ## IQ Server Configuration
 
