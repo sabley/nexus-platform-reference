@@ -4,8 +4,8 @@
 # "Sonatype" is a trademark of Sonatype, Inc.
 #
 
-basename=`basename $0`
-dirname=`dirname $0`
+basename=`basename "$0"`
+dirname=`dirname "$0"`
 dirname=`cd "$dirname" && pwd`
 cd "$dirname"
 

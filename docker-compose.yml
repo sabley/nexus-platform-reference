@@ -62,7 +62,7 @@ services:
   #     - -hooks=/etc/webhook/quay-consume.json
 
   # victoria:
-  #   image: 'victoria:1.0.0-44'
+  #   image: 'victoria:1.0.0-60'
   #   build: ./victoria
   #   volumes:
   #     - '~/.demo-pv/victoria/db:/home/nexus/db'
