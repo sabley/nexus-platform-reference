@@ -23,7 +23,7 @@ services:
       - '8081:8081'
       - '18443:18443'
   iq-server:
-    image: 'cmyanko/my-iq-server:1.65.0'
+    image: 'cmyanko/my-iq-server:1.66.0'
     build: ./iq-server
     volumes:
       - '~/.demo-pv/iq-data:/sonatype-work'
@@ -61,18 +61,18 @@ services:
   #     - -hooks=/etc/webhook/iq-consume.json
   #     - -hooks=/etc/webhook/quay-consume.json
 
-  # victoria:
-  #   image: 'victoria:1.0.0-60'
-  #   build: ./victoria
-  #   volumes:
-  #     - '~/.demo-pv/victoria/db:/home/nexus/db'
-  #     - '~/.demo-pv/victoria/log:/home/nexus/log'
-  #     - '~/.demo-pv/victoria/tmp:/home/nexus/tmp'
-  #   ports:
-  #     - '8090:8090'
-  #     - '8091:8091'
-  #   depends_on:
-  #     - iq-server
+  victoria:
+    image: 'victoria:1.0.0-60'
+    build: ./victoria
+    volumes:
+      - '~/.demo-pv/victoria/db:/home/nexus/db'
+      - '~/.demo-pv/victoria/log:/home/nexus/log'
+      - '~/.demo-pv/victoria/tmp:/home/nexus/tmp'
+    ports:
+      - '8090:8090'
+      - '8091:8091'
+    depends_on:
+      - iq-server
 
   # anchore-engine:
   #   image: docker.io/anchore/anchore-engine:latest
