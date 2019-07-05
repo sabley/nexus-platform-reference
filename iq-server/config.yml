@@ -81,7 +81,7 @@ server:
 
 # Notification mail settings.
 # If enabled, ensure that the baseUrl configuration setting is also enabled and correct, because generated emails often contain links to the server.
-mail:
+#mail:
 
   # The host running the SMTP server to use. 
   #hostname: "smtp.mailtrap.io"
