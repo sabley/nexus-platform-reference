@@ -102,7 +102,7 @@ mail:
   #ssl: true
   
   # Connect using TLS.
-  tls: true
+  #tls: true
 
 # Notification JIRA settings.
 # Note that any user of the Nexus IQ Server will have access to see all projects and applicable issue types available
