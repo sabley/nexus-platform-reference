@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx-proxy:
     build: ./nginx
-    image: 'dD/sonatype_nginx-proxy:2.6.1'
+    image: 'sonatype_partner/sonatype_nginx-proxy:2.6.1'
     ports:
       - '443:443'
       - '5000:5000'
@@ -16,7 +16,7 @@ services:
       - nexus
  
   nexus:
-    image: 'sonatype/nexus3:3.17.0'
+    image: 'sonatype/nexus3:3.18.0'
     volumes:
       - '~/.demo-pv/nexus-data:/nexus-data'
     ports:
@@ -24,7 +24,7 @@ services:
       - '18443:18443'
        
   iq-server:
-    image: 'dD/my-iq-server:1.68.0'
+    image: 'sonatype_partner/my-iq-server:1.69.0'
     build: ./iq-server
     volumes:
       - '~/.demo-pv/iq-data:/sonatype-work'
@@ -121,4 +121,4 @@ services:
 #        
 #   go:
 #     build: ./golang/
-#     image: dD/golang:compose
+#     image: sonatype-partner/golang:compose
