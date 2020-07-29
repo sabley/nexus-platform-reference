@@ -44,23 +44,42 @@ services:
     ports:
       - '8080:8080'
       - '50000:50000'
-
-  # listener:
-  #   image: my-webhook-listener:1.0.0
-  #   build: ./listener
-  #   volumes:
-  #     - /usr/local/bin/docker:/usr/bin/docker
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #   ports:
-  #     - "9000:9000"
-  #   command:
-  #     - -verbose 
-  #     - -hotreload
-  #     - -hooks=/etc/webhook/test.json
-  #     - -hooks=/etc/webhook/dockerHub-scan.json
-  #     - -hooks=/etc/webhook/nxrm-consume.json
-  #     - -hooks=/etc/webhook/iq-consume.json
-  #     - -hooks=/etc/webhook/quay-consume.json
+      
+# see Nexus IQ for Jira https://help.sonatype.com/integrations/nexus-iq-for-jira
+####
+#  jira:
+#    image: 'atlassian/jira-software:8.5.3' # https://hub.docker.com/r/atlassian/jira-software
+#    volumes:
+#      - '~/.demo-pv/jira-data:/var/atlassian/application-data/jira:delegated'
+#    ports:
+#      - '8080:8080'
+#
+# see Nexus IQ for Jira https://help.sonatype.com/integrations/nexus-iq-for-scm
+#####
+#  bitbucket:
+#    image: 'atlassian/bitbucket-server:7.0.2-jdk11' # https://hub.docker.com/r/atlassian/bitbucket-server
+#    volumes:
+#      - '~/.demo-pv/bitbucket-data:/var/atlassian/application-data/bitbucketl:delegated'
+#    ports:
+#      - '7990:7990'
+#      - '7999:7999'
+#      
+# listener:
+#   image: my-webhook-listener:1.0.0
+#   build: ./listener
+#   volumes:
+#     - /usr/local/bin/docker:/usr/bin/docker
+#     - /var/run/docker.sock:/var/run/docker.sock
+#   ports:
+#     - "9000:9000"
+#   command:
+#     - -verbose 
+#     - -hotreload
+#     - -hooks=/etc/webhook/test.json
+#     - -hooks=/etc/webhook/dockerHub-scan.json
+#     - -hooks=/etc/webhook/nxrm-consume.json
+#     - -hooks=/etc/webhook/iq-consume.json
+#     - -hooks=/etc/webhook/quay-consume.json
 
 #   victoria:
 #     image: 'victoria:1.0.0-60'
