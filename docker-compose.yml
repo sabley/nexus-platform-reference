@@ -36,7 +36,7 @@ services:
 # Docker based build jobs that want to use NXRM need to be outside of docker
 # network so they can hit the Nginx server for ingress and routing.
   jenkins:
-    image: jenkinsci/blueocean
+    image: jenkinsci/blueocean:1.24.6
     user: root
     volumes:
       - '~/.demo-pv/jenkins:/var/jenkins_home'
